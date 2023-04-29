@@ -1,8 +1,31 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <title>My Web</title>
-</head>
-<body>
-    <h1>Good</h1>
-</body>
+<html>
+    <head>
+        <title>My Web</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    </head>
+    <body>
+        <nav class="global_navbar">
+            <div class="global_navbar_background">
+                <div class="global_navbar_logo">
+                    {% load static %}
+                    <img src="{% static 'images/logo_signature.png' %}" alt="my signature">
+                </div>
+                <div class="global_navbar_items">
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <div class="global_navbar_signs">
+                    <div class="sign_in_out">
+
+                    </div>
+                    <div class="sign_up_mypage">
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </body>
+</html>
