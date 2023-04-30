@@ -1,31 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
     <head>
+        <meta charset="utf-8"
         <title>My Web</title>
         {% load static %}
         <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
     </head>
     <body>
+        
         <nav class="global_navbar">
             <div class="global_navbar_background">
                 <div class="global_navbar_logo">
                     {% load static %}
-                    <img src="{% static 'images/logo_signature.png' %}" alt="my signature">
+                    <img src="{% static 'css/navbar.css' %}" alt="my signature">
                 </div>
                 <div class="global_navbar_items">
                     <ul>
-                        
+                        <li class="global_navbar_item">
+                            <span>메인</span>
+                        </li>
+                        <li class="global_navbar_item">
+                            <span>준호</span>
+                        </li>
+                        <li class="global_navbar_item">
+                            <span>블로그</span>
+                        </li>
+                        <li class="global_navbar_item">
+                            <span>후원</span>
+                        </li>
                     </ul>
                 </div>
                 <div class="global_navbar_signs">
-                    <div class="sign_in_out">
-
+                    <div id="sign_in_out">
+                        <span>로그인</span>
                     </div>
-                    <div class="sign_up_mypage">
-
+                    <div id="sign_up_mypage">
+                        <span>회원가입</div>span>
                     </div>
                 </div>
             </div>
         </nav>
+
+        <main>
+
+            <section class="main_intro">
+                <div class="main_intro_sun">
+                    <img src="{% static 'images/happy.jpg' %}", alt="nice">
+                </div>
+                <div class="main_intro_hello">
+                    <p>안녕하세요</p>
+                </div>
+            </section>
+
+            <section class="main_blog">
+                <div>
+                    <div class="main_blog_item">
+                        <div class="blog_thumnail">
+                            <img src="{% static 'images/code.jpg' %}", alt="ugly code">
+                        </div>
+                        <div class="blog_title">
+                            <p>My programming<br>
+                                technique archive</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="blog_thumnail">
+                            <img src="{% static 'images/startup.jpg' %}", alt="ugly code">
+                        </div>
+                        <div class="blog_title">
+                            <p>Software engineering:<br>
+                                Co-op strategies</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="blog_thumnail">
+                            <img src="{% static 'images/book.jpg' %}", alt="ugly code">
+                        </div>
+                        <div class="blog_title">
+                            <p>Interesting studies<br>
+                                and my discussions</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="global_footer">
+            <div class="footer_content1">
+                <p>This is my personal website and for recording computer science theories and my related experiences.</p>
+                <p>All rights reserved.</p>
+                <p>Contact: stkjas4657@naver.com / checking every 9:00 am KST or anytime I can.</p>
+            </div>
+
+            <div class="footer_content2">
+                <div class="footer_github_image">
+                    <a href="github.com/LikeDeer">
+                        <img src="{% static 'images/logo_signature.png' %}">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer_content3">
+                <div class="footer_top">
+                    <button type="button" class="footer_top" onclick="window.scrollTo(0, 0)">
+                    </button>
+                </div>
+            </div>
+
+        </footer>
+
     </body>
 </html>
