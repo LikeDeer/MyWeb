@@ -2,92 +2,106 @@
 <html lang="ko">
     <head>
         <meta charset="utf-8"
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>My Web</title>
+
         {% load static %}
-        <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+        <link rel="stylesheet" type='text/css' href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type='text/js' href="{% static 'js/bootstrap.bundle.min.js' %}">
+        <link rel="stylesheet" type='text/css' href="{% static 'css/navbar.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
     </head>
     <body>
+        {% load static %}
         
-        <nav class="global_navbar">
-            <div class="global_navbar_background">
-                <div class="global_navbar_logo">
-                    {% load static %}
-                    <img src="{% static 'css/navbar.css' %}" alt="my signature">
-                </div>
-                <div class="global_navbar_items">
-                    <ul>
-                        <li class="global_navbar_item">
-                            <span>메인</span>
-                        </li>
-                        <li class="global_navbar_item">
-                            <span>준호</span>
-                        </li>
-                        <li class="global_navbar_item">
-                            <span>블로그</span>
-                        </li>
-                        <li class="global_navbar_item">
-                            <span>후원</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="global_navbar_signs">
-                    <div id="sign_in_out">
-                        <span>로그인</span>
-                    </div>
-                    <div id="sign_up_mypage">
-                        <span>회원가입</div>span>
-                    </div>
-                </div>
+        <!--------------------- 네비게이션 바 --------------------->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+            <div class="container-fluid">
+              <a class="navbar-brand navbar-logo" href="#">
+                <img src="{% static 'images/mysignature_white.svg' %}" width="24" height="24" color="#ffffff" style="margin-left: 50px; margin-right: 50px;">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">메인</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="junho">준호</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="blog">블로그</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="donate">후원하기</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-        </nav>
+          </nav>
 
         <main>
+            <!--------------------- 섹션1: 첫 배너 --------------------->
+            <section class="main_first">
+                <div class="container-fluid">
+                    <img id="car" src="{% static 'images/man-fixcar.jpg' %}" width="100%" style="z-index: -1;">
+                    <p id="main_first_poet">오늘 자는 잠은<br>내일을 풍요롭게 한다.</p>
+                </div>
+            </section>
 
+            <!--------------------- 섹션2: 자기소개 배너 --------------------->
             <section class="main_intro">
-                <div class="main_intro_sun">
-                    <img src="{% static 'images/happy.jpg' %}", alt="nice">
-                </div>
-                <div class="main_intro_hello">
-                    <p>안녕하세요</p>
-                </div>
-            </section>
-
-            <section class="main_blog">
-                <div>
-                    <div class="main_blog_item">
-                        <div class="blog_thumnail">
-                            <img src="{% static 'images/code.jpg' %}", alt="ugly code">
+                <div class="container-fluid main_intro_background">
+                    <div class="main_intro_background_image text-center">
+                        <div class="main_intro_img_box">
+                            <img class="img-circle img-responsives" src="{% static 'images/happy.jpeg' %}" alt="nice">
                         </div>
-                        <div class="blog_title">
-                            <p>My programming<br>
-                                technique archive</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="blog_thumnail">
-                            <img src="{% static 'images/startup.jpg' %}", alt="ugly code">
-                        </div>
-                        <div class="blog_title">
-                            <p>Software engineering:<br>
-                                Co-op strategies</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="blog_thumnail">
-                            <img src="{% static 'images/book.jpg' %}", alt="ugly code">
-                        </div>
-                        <div class="blog_title">
-                            <p>Interesting studies<br>
-                                and my discussions</p>
+                        <div class="main_intro_hello">
+                            <p style="color: white; text-shadow: 0px 0.5px 1px #333333; padding-bottom: 300px;">안녕하세요</p>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <!--------------------- 섹션3: 블로그 배너 --------------------->
+            <section class="container-fluid main_blog text-center">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="main_blog_image_box">
+                            <a href="blog">
+                                <img src="{% static 'images/code.jpg' %}">
+                            </a>
+                        </div>
+                        <p class="blog_title">My programming<br>technique archive</p>
+                    </div>
+        
+                    <div class="col-sm-4">
+                        <div class="main_blog_image_box">
+                            <a href="blog">
+                                <img src="{% static 'images/startup.jpg' %}">
+                            </a>
+                        </div>
+                        <p class="blog_title">Software engineering:<br>Co-op strategies</p>
+                    </div>
+        
+                    <div class="col-sm-4">
+                        <div class="main_blog_image_box">
+                            <a href="blog">
+                                <img src="{% static 'images/book.jpg' %}">
+                            </a>
+                        </div>
+                        <p class="blog_title">Interesting studies<br>and my discussions</p>
+                    </div>
+                </div>
+            </section>
+            
         </main>
 
-        <footer class="global_footer">
-            <div class="footer_content1">
+        <footer class="global_footer text-center" style="color: white; background-color: rgb(0, 0, 95);">
+            <div class="container-fulid footer_content1">
                 <p>This is my personal website and for recording computer science theories and my related experiences.</p>
                 <p>All rights reserved.</p>
                 <p>Contact: stkjas4657@naver.com / checking every 9:00 am KST or anytime I can.</p>
@@ -95,20 +109,24 @@
 
             <div class="footer_content2">
                 <div class="footer_github_image">
-                    <a href="github.com/LikeDeer">
-                        <img src="{% static 'images/logo_signature.png' %}">
+                    <a href="https://github.com/LikeDeer" target="_blank">
+                        <img src="{% static 'images/Github_Logo_White.png' %}" width="100px">
                     </a>
                 </div>
             </div>
 
             <div class="footer_content3">
                 <div class="footer_top">
-                    <button type="button" class="footer_top" onclick="window.scrollTo(0, 0)">
-                    </button>
+                    <div class="footer_top" onclick="window.scrollTo(0, 0)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"/>
+                          </svg>
+                    </div>
                 </div>
             </div>
 
         </footer>
 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     </body>
 </html>
